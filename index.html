@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="libraries/jquery-1.11.3.min.js"></script>
+		<title>URP Rocket Data</title>
+	</head>
+	<body>
+        <button onclick="foo()">Open Valve 1</button>
+        <button onclick="bar()"> Close Valve 1</button>
+        <script>
+  
+        function foo() {
+            var retval = {
+                cmd: "open-valve",
+                arg0: "Valve1"
+            }
+            $.ajax
+            ({
+              type: "POST",
+              url: "/cmd",
+              dataType: 'json',
+              async: false,
+              data: JSON.stringify(retval)
+            })
+        }
+ 
+        function bar() {
+            var retval = {
+                cmd: "close-valve",
+                arg0: "Valve1"
+            }
+            $.ajax
+            ({
+              type: "POST",
+              url: "/cmd",
+              dataType: 'json',
+              async: false,
+              data: JSON.stringify(retval)
+            })
+        }
+
+
+	</script>
+	</body>
+</html>
